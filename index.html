@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>image slider</title>
+    <link rel="stylesheet" href="sytles.css">
+</head>
+<body onload="slider()">
+    <div class="banner">
+        <div class="slider">
+            <img src="images/comp6.jpg" id="slideimg">
+        </div>
+        <div class="overlay">
+            <div class="navbar">
+                </div>
+                <div class="menu_icon">
+                    <img src="images/comp2.jpg" >
+                    <img src="images/comp3.jpg" >
+                    <img src="images/comp4.jpg" >
+                </div>
+            </div>
+            <div class="content">
+                <h1>LIFE</h1>
+                <h3>life lives and life dies,life laughs and life cries,life give up
+                    and life tries,but life looks different in everyone eyes
+                </h3>
+            </div>
+            <button type="button">WATCH MORE</button>
+            <button type="button" class="btn2">SUBCRIBE</button>
+
+
+        </div>
+    </div>
+    
+    <script>
+
+        var slideimg = document.getElementById("slideimg");
+    // array will contain all images to be used.
+
+        var images = new Array(
+            "images/comp1.jpg",
+          "images/comp2.jpg",
+           "images/comp3.jpg",
+           "images/comp4.jpg",
+           "images/comp7.jpg",
+           "images/comp8.jpg",
+            "images/comp9.jpg"
+        );
+
+        var len = images.length;
+        var i = 0;
+
+        function slider(){
+            if(i > len-1){
+                i = 0;
+            }
+            slideimg.src = images[i];
+            i++;
+            setTimeout("slider()",3000);
+        }
+
+    </script>
+</body>
+</html>
